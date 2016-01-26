@@ -1,0 +1,65 @@
+{
+  "name": "user",
+  "plural": "users",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "username": {
+      "type": "string"
+    },
+    "lastname": {
+      "type": "string"
+    },
+    "onlyfriends": {
+      "type": "string"
+    },
+    "onlyauthenticated": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "friends": {
+      "type": "hasMany",
+      "model": "user",
+      "foreignKey": "userId",
+      "through": "friend",
+      "keyThrough": "friendId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": [
+        "__count__friends",
+        "__get__friends",
+        "__exists__friends",
+        "__findById__friends"
+      ]
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": [
+        "__link__friends",
+        "__unlink__friends"
+      ]
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "find"
+    }
+  ],
+  "methods": {}
+}

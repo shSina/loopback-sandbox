@@ -1,6 +1,8 @@
 {
   "db": {
+    "database": "testapp",
     "name": "db",
-    "connector": "memory"
+    "connector": "mongodb",
+    "allowExtendedOperators": true
   }
 }

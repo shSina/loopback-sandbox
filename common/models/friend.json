@@ -1,0 +1,22 @@
+{
+  "name": "friend",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "firend": {
+      "type": "belongsTo",
+      "model": "user"
+    },
+    "user":{
+      "type": "belongsTo",
+      "model": "user"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
