@@ -8,7 +8,7 @@
   "properties": {},
   "validations": [],
   "relations": {
-    "firend": {
+    "friend": {
       "type": "belongsTo",
       "model": "user"
     },
