@@ -10,7 +10,10 @@
   "relations": {
     "friend": {
       "type": "belongsTo",
-      "model": "user"
+      "model": "user",
+      "scope":{
+        "fields": {"id": true, "name": true, "username": true}
+      }
     },
     "user":{
       "type": "belongsTo",

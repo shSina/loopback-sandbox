@@ -27,10 +27,7 @@
       "model": "user",
       "foreignKey": "userId",
       "through": "friend",
-      "keyThrough": "friendId",
-      "scope":{
-        "fields": {"id": true, "name": true, "username": true}
-      }
+      "keyThrough": "friendId"
     }
   },
   "acls": [
